@@ -1,16 +1,15 @@
 package stellarBurgersTest;
 
-import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import Data.User;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import stellarBurgersTest.pageObject.LoginPage;
 import stellarBurgersTest.pageObject.MainPage;
@@ -32,7 +31,7 @@ public class BaseTest {
 
     @Before
     public void preSettings(){
-        System.setProperty("webdriver.chrome.driver","C:/Users/dina1/chromedriver_win32/chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         //Yandex
 //        System.setProperty("webdriver.chrome.driver","C:/Users/dina1/chromedriver_win32/chromedriver-2.exe");
